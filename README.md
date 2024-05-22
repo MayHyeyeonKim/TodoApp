@@ -63,8 +63,3 @@ This application allows users to perform CRUD operations on to-do items. Users c
 - Node.js
 - npm
 
-### Installation
-
-1. Clone the repository
-   ```bash
-   git clone [repository_url]
