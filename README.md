@@ -77,3 +77,24 @@ This application allows users to perform CRUD operations on to-do items. Users c
 
 ### Testing
 - Ensure to thoroughly test the application, both backend and frontend functionalities, before and after deployment.
+
+## Error Encountered
+
+### Gateway Error
+
+I encountered a gateway error:
+
+```plaintext
+2024/05/23 09:14:17 [error] 2117#2117: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 50.175.105.250, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8080/", host: "todo-mayster.us-east-2.elasticbeanstalk.com"
+2024/05/23 09:14:17 [error] 2117#2117: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 50.175.105.250, server: , request: "GET /favicon.ico HTTP/1.1", upstream: "http://127.0.0.1:8080/favicon.ico", host: "todo-mayster.us-east-2.elasticbeanstalk.com", referrer: "http://todo-mayster.us-east-2.elasticbeanstalk.com/"
+2024/05/23 09:14:31 [error] 2117#2117: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 50.175.105.250, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8080/", host: "todo-mayster.us-east-2.elasticbeanstalk.com"
+2024/05/23 09:14:31 [error] 2117#2117: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 50.175.105.250, server: , request: "GET /favicon.ico HTTP/1.1", upstream: "http://127.0.0.1:8080/favicon.ico", host: "todo-mayster.us-east-2.elasticbeanstalk.com", referrer: "http://todo-mayster.us-east-2.elasticbeanstalk.com/"
+```
+
+### solution
+The server was configured to use port 5050. To fix this, I updated the server configuration to:
+```javascript
+app.listen(process.env.PORT || 5000, () => {
+  console.log("server on");
+});
+```
