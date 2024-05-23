@@ -43,19 +43,6 @@ This application allows users to perform CRUD operations on to-do items. Users c
 5. **Testing**
    - Use Postman for testing API endpoints
 
-
-## Frontend Setup
-
-1. **Initial Setup**
-   - Set up npm
-   - Use React
-
-2. **Functionality Implementation**
-   - Implement CRUD operations on the frontend
-
-3. **Testing**
-   - Test the frontend functionalities
-
 ## Getting Started
 
 ### Prerequisites
@@ -86,9 +73,6 @@ I encountered a gateway error:
 
 ```plaintext
 2024/05/23 09:14:17 [error] 2117#2117: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 50.175.105.250, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8080/", host: "todo-mayster.us-east-2.elasticbeanstalk.com"
-2024/05/23 09:14:17 [error] 2117#2117: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 50.175.105.250, server: , request: "GET /favicon.ico HTTP/1.1", upstream: "http://127.0.0.1:8080/favicon.ico", host: "todo-mayster.us-east-2.elasticbeanstalk.com", referrer: "http://todo-mayster.us-east-2.elasticbeanstalk.com/"
-2024/05/23 09:14:31 [error] 2117#2117: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 50.175.105.250, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8080/", host: "todo-mayster.us-east-2.elasticbeanstalk.com"
-2024/05/23 09:14:31 [error] 2117#2117: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 50.175.105.250, server: , request: "GET /favicon.ico HTTP/1.1", upstream: "http://127.0.0.1:8080/favicon.ico", host: "todo-mayster.us-east-2.elasticbeanstalk.com", referrer: "http://todo-mayster.us-east-2.elasticbeanstalk.com/"
 ```
 
 ![Error](https://github.com/MayHyeyeonKim/TodoApp/blob/main/images/deploy_err.png)
