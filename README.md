@@ -91,6 +91,11 @@ I encountered a gateway error:
 2024/05/23 09:14:31 [error] 2117#2117: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 50.175.105.250, server: , request: "GET /favicon.ico HTTP/1.1", upstream: "http://127.0.0.1:8080/favicon.ico", host: "todo-mayster.us-east-2.elasticbeanstalk.com", referrer: "http://todo-mayster.us-east-2.elasticbeanstalk.com/"
 ```
 
+![Error](https://github.com/MayHyeyeonKim/TodoApp/blob/main/images/deploy_err.png)
+![Error](https://github.com/MayHyeyeonKim/TodoApp/blob/main/images/gateway_err.png)
+![Error](https://github.com/MayHyeyeonKim/TodoApp/blob/main/images/deploy_err_2.png)
+
+
 ### solution
 The server was configured to use port 5050. To fix this, I updated the server configuration to:
 ```javascript
