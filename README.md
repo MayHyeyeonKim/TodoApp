@@ -24,7 +24,7 @@ This application allows users to perform CRUD operations on to-do items. Users c
 
 3. **Database Schema**
    - Define the database schema for to-do items
-    ``` Json
+    ``` Javascript
     const todoSchema = new mongoose.Schema({
        task: {
          type: String,
@@ -63,3 +63,17 @@ This application allows users to perform CRUD operations on to-do items. Users c
 - Node.js
 - npm
 
+## Deployment
+
+### Database Deployment
+- **MongoDB Atlas**: Use MongoDB Atlas for database deployment.
+
+### Backend Deployment
+- **AWS Elastic Beanstalk**: Deploy the backend using AWS Elastic Beanstalk.
+- **Heroku**: Alternatively, you can deploy the backend on Heroku.
+
+### Frontend Deployment
+- Deploy the frontend using your preferred hosting service (e.g., Vercel, Netlify, AWS S3, etc.).
+
+### Testing
+- Ensure to thoroughly test the application, both backend and frontend functionalities, before and after deployment.
