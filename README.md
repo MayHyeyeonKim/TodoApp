@@ -39,6 +39,16 @@ This application allows users to perform CRUD operations on to-do items. Users c
 
 4. **Functionality**
    - Implement CRUD operations
+   - Implement User Registration
+     - Accept email, password, and username
+     - Store received information in the database
+     - Encrypt passwords before storing
+   - Implement User Login
+      - Enter email and password and send
+      - Check in the database if there is a user with the corresponding email and password
+      - If not, login fails
+      - If yes, user information + token
+      - The frontend stores this information
 
 5. **Testing**
    - Use Postman for testing API endpoints
