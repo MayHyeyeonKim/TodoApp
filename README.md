@@ -89,7 +89,6 @@ I encountered a gateway error:
 ![Error](https://github.com/MayHyeyeonKim/TodoApp/blob/main/images/gateway_err.png)
 ![Error](https://github.com/MayHyeyeonKim/TodoApp/blob/main/images/deploy_err_2.png)
 
-
 ### solution
 The server was configured to use port 5050. To fix this, I updated the server configuration to:
 ```javascript
@@ -97,3 +96,26 @@ app.listen(process.env.PORT || 5000, () => {
   console.log("server on");
 });
 ```
+
+### The error where const ```isMatch = bcrypt.compareSync(password, user.password);``` returns ```false```
+```Javascript
+userController.loginWithEmail= async(req,res)=>{
+    try{
+        const {email, password} = req.body
+        const user = await User.findOne({email}, "-createdAt -updatedAt -__v");
+        if(user){
+            const isMatch = bcrypt.compareSync(password, user.password);
+            if(isMatch){
+                const token = user.generateToken();
+                return res.status(200).json({status:"success", user, token})
+            }
+        }
+        throw new Error("userId or password is incorrect!")
+    }catch(err){
+        res.status(400).json({status: "fail~", err});
+    }
+};
+```
+
+### solution
+ I changed the password to something other than '0000'
