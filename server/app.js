@@ -18,4 +18,20 @@ mongoose
     .then(()=>{console.log("mongoose connected")})
     .catch((err)=>{console.log("DB connection fail", err)});
 
-app.listen(process.env.PORT || 5000,()=>{console.log("server on");});
+app.listen(process.env.PORT || 5050,()=>{console.log("server on");});
+
+// register
+// router
+// model
+// save data (check for existing user, encrypt password)
+// response
+
+//login
+// 1. Set up the router
+// 2. Read email and password information
+// 3. Retrieve user information with the email
+// 4. Compare the password stored in the database for this user with the password sent from the frontend
+// 5. If they match, generate a token
+// 6. If they don't match, send an error message
+// 7. Send user information and token in the response
+
