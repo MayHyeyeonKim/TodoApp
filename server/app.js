@@ -6,13 +6,15 @@ const cors = require('cors');
 require('dotenv').config()
 const app = express()
 const MONGODB_URI_PROD = process.env.MONGODB_URI_PROD
+// const MONGODB_URI = process.env.MONGODB_URI
 // console.log("mongouri", MONGODB_URI_PROD)
 app.use(bodyParser.json())
 app.use(cors())
 app.use('/api',indexRouter);
 
 const mongoURI = MONGODB_URI_PROD;
-
+// const mongoURI = MONGODB_URI
+console.log('MongoDB URI:', process.env.MONGODB_URI);
 mongoose
     .connect(mongoURI, {useNewUrlParser:true})
     .then(()=>{console.log("mongoose connected")})
