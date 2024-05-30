@@ -20,4 +20,21 @@ authController.authenticate = (req, res, next) =>{
     }
 }
 
+authController.logout = (req,res,next) => {
+    try{
+        const tokenString = req.headers.authorization;
+        if (!tokenString) {
+            throw new Error("Invalid token");
+        }
+        const token = tokenString.replace("Bearer ", "");
+
+        blacklistedTokens.push(token);
+
+        res.status(200).json({ status: 'success', message: 'See you again' });
+
+    } catch(error){
+        res.status(400).json({status:'Fail~', message: error.message})
+    }
+}
+
 module.exports = authController;
